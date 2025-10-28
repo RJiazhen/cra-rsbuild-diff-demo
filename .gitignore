@@ -10,7 +10,7 @@
 
 # production
 /build
-/rsbuild-dist
+/rsbuild-dist-*
 
 # misc
 .DS_Store

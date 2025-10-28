@@ -17,9 +17,12 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "rs:start": "rsbuild dev",
-    "rs:build": "rsbuild build",
-    "rs:preview": "rsbuild preview"
+    "rs:1.4:start": "node node_modules/rsbuild-core-1.4/bin/rsbuild.js dev --env-mode rsbuild.1.4.development",
+    "rs:1.4:build": "node node_modules/rsbuild-core-1.4/bin/rsbuild.js build  --env-mode rsbuild.1.4.production",
+    "rs:1.5:start": "node node_modules/rsbuild-core-1.5/bin/rsbuild.js dev --env-mode rsbuild.1.5.development",
+    "rs:1.5:build": "node node_modules/rsbuild-core-1.5/bin/rsbuild.js build --env-mode rsbuild.1.5.production",
+    "rs:1.5:build:index-2": "node node_modules/rsbuild-core-1.5/bin/rsbuild.js build --env-mode rsbuild.1.5.index-2.production",
+    "build:all": "pnpm build & pnpm rs:1.4:build & pnpm rs:1.5:build"
   },
   "eslintConfig": {
     "extends": [
@@ -38,5 +41,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@rsbuild/plugin-react": "^1.4.1",
+    "rsbuild-core-1.4": "npm:@rsbuild/core@1.4",
+    "rsbuild-core-1.5": "npm:@rsbuild/core@1.5"
   }
 }
