@@ -18,9 +18,12 @@ The project uses environment-based configuration with `--env-mode` flags to cont
 
 - `pnpm rs:1.4:start` - Start Rsbuild 1.4 dev server (uses rsbuild-core-1.4)
 - `pnpm rs:1.4:build` - Build with Rsbuild 1.4 to `rsbuild-dist-1.4/` directory
+- `pnpm rs:1.4:build:nominify` - Build with Rsbuild 1.4 without minify to `rsbuild-dist-1.4-nominify/` directory
 - `pnpm rs:1.5:start` - Start Rsbuild 1.5 dev server (uses rsbuild-core-1.5)
 - `pnpm rs:1.5:build` - Build with Rsbuild 1.5 to `rsbuild-dist-1.5/` directory
+- `pnpm rs:1.5:build:nominify` - Build with Rsbuild 1.5 without minify to `rsbuild-dist-1.5-nominify/` directory
 - `pnpm rs:1.5:build:index-2` - Build with Rsbuild 1.5 using `src/index-2.js` to `rsbuild-dist-1.5-index-2/` directory
+- `pnpm rs:1.5:build:index-2:nominify` - Build with Rsbuild 1.5 using `src/index-2.js` without minify to `rsbuild-dist-1.5-index-2-nominify/` directory
 - `pnpm build:all` - Build all variants (CRA + both Rsbuild versions) in parallel
 
 ## Build Process
@@ -28,5 +31,6 @@ The project uses environment-based configuration with `--env-mode` flags to cont
 All Rsbuild commands use `node node_modules/rsbuild-core-X.Y/bin/rsbuild.js` with environment mode flags:
 - Development: `--env-mode rsbuild.X.Y.development`
 - Production: `--env-mode rsbuild.X.Y.production`
+- Production without minify: `--env-mode rsbuild.X.Y.production.nominify`
 
-The config in [rsbuild.config.ts](mdc:rsbuild.config.ts) reads environment variables to determine the version and entry point.
+The config in [rsbuild.config.ts](mdc:rsbuild.config.ts) reads environment variables to determine the version, entry point, and minify settings.

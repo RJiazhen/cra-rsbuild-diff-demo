@@ -19,10 +19,13 @@
     "eject": "react-scripts eject",
     "rs:1.4:start": "node node_modules/rsbuild-core-1.4/bin/rsbuild.js dev --env-mode rsbuild.1.4.development",
     "rs:1.4:build": "node node_modules/rsbuild-core-1.4/bin/rsbuild.js build  --env-mode rsbuild.1.4.production",
+    "rs:1.4:build:nominify": "node node_modules/rsbuild-core-1.4/bin/rsbuild.js build --env-mode rsbuild.1.4.production.nominify",
     "rs:1.5:start": "node node_modules/rsbuild-core-1.5/bin/rsbuild.js dev --env-mode rsbuild.1.5.development",
     "rs:1.5:build": "node node_modules/rsbuild-core-1.5/bin/rsbuild.js build --env-mode rsbuild.1.5.production",
+    "rs:1.5:build:nominify": "node node_modules/rsbuild-core-1.5/bin/rsbuild.js build --env-mode rsbuild.1.5.production.nominify",
     "rs:1.5:build:index-2": "node node_modules/rsbuild-core-1.5/bin/rsbuild.js build --env-mode rsbuild.1.5.index-2.production",
-    "build:all": "pnpm build & pnpm rs:1.4:build & pnpm rs:1.5:build"
+    "rs:1.5:build:index-2:nominify": "node node_modules/rsbuild-core-1.5/bin/rsbuild.js build --env-mode rsbuild.1.5.index-2.production.nominify",
+    "build:all": "pnpm build & pnpm rs:1.4:build & pnpm rs:1.5:build & pnpm rs:1.4:build:nominify & pnpm rs:1.5:build:nominify & pnpm rs:1.5:build:index-2 & pnpm rs:1.5:build:index-2:nominify"
   },
   "eslintConfig": {
     "extends": [

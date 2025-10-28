@@ -10,8 +10,11 @@ This is a comparison project between Create React App (CRA) and Rsbuild build ou
 - **CRA builds**: Output to `build/` directory (created by [package.json](mdc:package.json) `react-scripts build`)
 - **Rsbuild builds**:
   - `rsbuild-dist-1.4/` - Rsbuild 1.4 production build (from `src/index.js`)
+  - `rsbuild-dist-1.4-nominify/` - Rsbuild 1.4 production build without minification
   - `rsbuild-dist-1.5/` - Rsbuild 1.5 production build (from `src/index.js`)
+  - `rsbuild-dist-1.5-nominify/` - Rsbuild 1.5 production build without minification
   - `rsbuild-dist-1.5-index-2/` - Rsbuild 1.5 production build (from `src/index-2.js`)
+  - `rsbuild-dist-1.5-index-2-nominify/` - Rsbuild 1.5 production build without minification (from `src/index-2.js`)
 
 ## Source Files
 

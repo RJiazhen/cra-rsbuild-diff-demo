@@ -18,8 +18,9 @@ In [package.json](mdc:package.json) devDependencies:
 - `SOURCE_ENTRY_INDEX` - Optional entry point override (defaults to `./src/index.js`)
 
 The config dynamically sets:
-- Output directory: `rsbuild-dist-{version}` or `rsbuild-dist-{version}-index-2` if alternate entry used
+- Output directory: `rsbuild-dist-{version}` or `rsbuild-dist-{version}-index-2` if alternate entry used, or `rsbuild-dist-{version}-nominify` if minification is disabled
 - Entry point: Source entry index from environment or default
+- Minification: `output.minify` based on `DISABLE_MINIFY` environment variable
 
 ## Adding New Rsbuild Versions
 
@@ -33,11 +34,12 @@ To add another rsbuild version without overwriting existing ones:
 2. Add build scripts for the new version following the pattern in [package.json](mdc:package.json):
    - `rs:X.Y:start` - dev server
    - `rs:X.Y:build` - production build
+   - `rs:X.Y:build:nominify` - production build without minification
 
 3. The scripts call the node binary directly: `node node_modules/rsbuild-core-X.Y/bin/rsbuild.js`
 
 ## Environment Files
 
 Build commands use `--env-mode` flags to set configuration:
-- Production env files should set `RSBUILD_VERSION` and optionally `SOURCE_ENTRY_INDEX`
-- Pattern: `.env.rsbuild.X.Y.production` or `.env.rsbuild.X.Y.development`
+- Production env files should set `RSBUILD_VERSION` and optionally `SOURCE_ENTRY_INDEX`, `DISABLE_MINIFY`
+- Pattern: `.env.rsbuild.X.Y.production` or `.env.rsbuild.X.Y.production.nominify` for unminified builds
