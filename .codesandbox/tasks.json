@@ -1,0 +1,66 @@
+{
+  // These tasks will run in order when initializing your CodeSandbox project.
+  "setupTasks": [
+    {
+      "command": "pnpm install",
+      "name": "Installing Dependencies"
+    }
+  ],
+
+  // These tasks can be run from CodeSandbox. Running one will open a log in the app.
+  "tasks": {
+    "start": {
+      "name": "start",
+      "command": "pnpm build:all",
+      "runAtStart": true
+    },
+    "build": {
+      "name": "build",
+      "command": "pnpm build"
+    },
+    "test": {
+      "name": "test",
+      "command": "pnpm test"
+    },
+    "eject": {
+      "name": "eject",
+      "command": "pnpm eject"
+    },
+    "rs:1.4:start": {
+      "name": "rs:1.4:start",
+      "command": "pnpm rs:1.4:start"
+    },
+    "rs:1.4:build": {
+      "name": "rs:1.4:build",
+      "command": "pnpm rs:1.4:build"
+    },
+    "rs:1.4:build:nominify": {
+      "name": "rs:1.4:build:nominify",
+      "command": "pnpm rs:1.4:build:nominify"
+    },
+    "rs:1.5:start": {
+      "name": "rs:1.5:start",
+      "command": "pnpm rs:1.5:start"
+    },
+    "rs:1.5:build": {
+      "name": "rs:1.5:build",
+      "command": "pnpm rs:1.5:build"
+    },
+    "rs:1.5:build:nominify": {
+      "name": "rs:1.5:build:nominify",
+      "command": "pnpm rs:1.5:build:nominify"
+    },
+    "rs:1.5:build:index-2": {
+      "name": "rs:1.5:build:index-2",
+      "command": "pnpm rs:1.5:build:index-2"
+    },
+    "rs:1.5:build:index-2:nominify": {
+      "name": "rs:1.5:build:index-2:nominify",
+      "command": "pnpm rs:1.5:build:index-2:nominify"
+    },
+    "build:all": {
+      "name": "build:all",
+      "command": "pnpm build:all"
+    }
+  }
+}
