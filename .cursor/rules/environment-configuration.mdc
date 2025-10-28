@@ -1,0 +1,44 @@
+---
+alwaysApply: true
+---
+# Environment Configuration
+
+This project uses environment-based builds with Rsbuild to manage different build configurations.
+
+## Environment Modes
+
+Build commands use `--env-mode` flags to load different environment configurations:
+- Development: `--env-mode rsbuild.X.Y.development`
+- Production: `--env-mode rsbuild.X.Y.production`
+
+## Environment Variables
+
+The [rsbuild.config.ts](mdc:rsbuild.config.ts) reads these environment variables:
+
+- `RSBUILD_VERSION` - Determines which Rsbuild version to use (1.4 or 1.5)
+- `SOURCE_ENTRY_INDEX` - Optional override for entry point (default: `./src/index.js`)
+
+## Environment Files Pattern
+
+Environment files follow this naming pattern:
+- `.env.rsbuild.{version}.{mode}`
+- Example: `.env.rsbuild.1.5.production`
+
+These files should contain:
+```
+RSBUILD_VERSION=1.5
+SOURCE_ENTRY_INDEX=./src/index.js
+```
+
+For alternate entry points:
+```
+RSBUILD_VERSION=1.5
+SOURCE_ENTRY_INDEX=./src/index-2.js
+```
+
+## Dynamic Configuration
+
+The config in [rsbuild.config.ts](mdc:rsbuild.config.ts) uses these environment variables to:
+1. Determine output directory: `rsbuild-dist-{version}` or `rsbuild-dist-{version}-index-2`
+2. Set the entry point: Source entry index from env or default
+3. Control which Rsbuild version instance to use
